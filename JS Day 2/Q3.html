@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<body>
+    <h1>Enter 2 Numbers</h1>
+    <input type = "text" id = "input1" placeholder = "For normal output">
+    <input type = "text" id = "input2" placeholder = "For normal output"><br><br>
+    <input type = "text" id = "input3" placeholder = "For string error">
+    <input type = "text" id = "input4" placeholder = "For string error "><br><br>
+    <input type = "text" id = "input5" placeholder = "For 0/0 error">
+    <input type = "text" id = "input6" placeholder = "For 0/0 error"><br><br>
+    <button onclick="DivideNums()">Submit</button>
+    <script>
+        function DivideNums(){
+            var input1 = document.getElementById("input1").value;
+            var input2 = document.getElementById("input2").value;
+            var input3 = document.getElementById("input3").value;
+            var input4 = document.getElementById("input4").value;
+            var input5 = document.getElementById("input5").value;
+            var input6 = document.getElementById("input6").value;
+            var num = parseInt(input1);
+            var deno = parseInt(input2);
+            var input5 = parseInt(input5);
+            var input6 = parseInt(input6);
+
+            try{
+                if(typeof num == "string" || typeof deno == "string")
+                {
+                    throw new Error ("Number is invalid");
+                }
+                else if(deno === 0){
+                    throw new Error("Divided numerator by zero");
+                }
+                
+                var Result = num/deno;
+                console.log(Result);
+                
+            }
+            catch(error){
+                console.error("An error occurred:", error.message)
+            }
+
+            try{
+                if(typeof input3 == "string" || typeof input4 == "string")
+                {
+                    throw new Error ("Input is string");
+                }
+                else if(input4 === 0){
+                    throw new Error("Divided numerator by zero");
+                }
+                
+                var Result = input3/input4;
+                console.log(Result);
+                
+            }
+            catch(error){
+                console.error("An error occurred:", error.message)
+            }
+
+            try{
+                if(typeof input5 == "string" || typeof input6 == "string")
+                {
+                    throw new Error ("Number is invalid");
+                }
+                else if(input6 === 0){
+                    throw new Error("Divided numerator by zero");
+                }
+                
+                var Result = input5/input6;
+                console.log(Result);
+                
+            }
+            catch(error){
+                console.error("An error occurred:", error.message)
+            }
+        }
+    </script>
+</body>
+</html>

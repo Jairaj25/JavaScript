@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<style>
+    table, th,td{
+      border: 1px solid rgb(137, 220, 223);
+    }
+</style>
+<body>
+    <table id="table1">
+    <tr>
+        <th>ID</th>
+        <th>Fname</th>
+        <th>Lname</th>
+    </tr>
+    </table>
+    <script>
+        const request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+            if(this.readyState===4 && this.status==200){
+                const response = JSON.parse(request.responseText);
+                createTable(response.data);
+            }
+        }
+        request.open("GET", "https://reqres.in/api/users?page=1",true);
+        request.send();
+        //foreach loop display function create table and show data using for each loop for extracted data;   append table in body. document.body.append(table)
+        function createTableRow(table,data){
+            const tr = document.createElement('tr');
+            const tdID = document.createElement('td');
+            const tdFName = document.createElement('td');
+            const tdLName = document.createElement('td');
+            tdID.innerText = data.id;
+            tdFName.innerText = data.first_name;
+            tdLName.innerText = data.last_name;
+            tr.append(tdID)
+            tr.append(tdFName)
+            tr.append(tdLName)
+            table.append(tr);
+        }
+        function createTable(data){
+        const table = document.getElementById("table1");
+        table.style.border= "solid black"
+        data.forEach(person => {
+            createTableRow(table,person)
+        });
+    document.body.append(table)
+}
+    </script>
+</body>
+</html>

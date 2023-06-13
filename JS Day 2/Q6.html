@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<body>
+    <div id = "div">
+        <button id = "btn1">Click Me!(Button without stopPropagation)</button><br><br>
+        <button id = "btn2">Click Me!</button>
+    </div>
+    <script>
+        const div = document.getElementById("div")
+        const btn1 = document.getElementById("btn1")
+        const btn2 = document.getElementById("btn2")
+        div.addEventListener('click', () => {
+        console.log("You Clicked on Div")
+        })
+        btn1.addEventListener('click', () => {
+        console.log("You Clicked First Button")
+        })
+        btn2.addEventListener('click', (e) => {
+        e.stopPropagation()
+        console.log("You Clicked Second Button")
+        })
+    
+    </script>
+</body>
+</html>

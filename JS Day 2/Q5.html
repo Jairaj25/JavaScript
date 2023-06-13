@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<body>
+    <script>
+        function MainVoidEtc(){
+            var integer = 0;
+            var array =[];
+            function PublicPrivate(input){
+                if(Number.isInteger(input)){
+                    integer += input;
+                    console.log(integer);
+                }
+                else{
+                    array = [...array,input];
+                    console.log(array);
+                }
+            }
+            return PublicPrivate;
+        }
+
+        var myFunc = MainVoidEtc();
+
+        myFunc(5);
+        myFunc(15);
+        myFunc('First');
+        myFunc('Second');
+    </script>
+</body>
+</html>

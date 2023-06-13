@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <script>
+            function car (RegNum, Brand) {
+                this.RegNum = RegNum;
+                this.Brand = Brand;
+            }
+            car.prototype.DetailReturn = function (){
+                return this.RegNum+" "+this.Brand;
+            };
+            const newcar = new car ("MH47AZ7732", "Dzire");
+
+            function owner (name, year) {
+                this.name = name;
+                this.year = year;
+            }
+            const newowner = new owner("Doraemon", "2005");
+
+            function display( car, owner) {
+                console.log( this.DetailReturn(), newowner.name, newowner.year)
+            };
+            
+
+            display.call(newcar, newowner);
+
+        </script>
+    </body>
+</html>

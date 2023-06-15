@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title>TypeScript Demo</title>
+  </head>
+  <body>
+    <div id="demo-div">Next</div>
+    <script type="module" src="../dist/index.js"></script>
+  </body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <title>TypeScript Demo</title>
+  </head>
+  <body>
+    <div>
+      <form name="RegForm"  >
+        <p>
+          Name: <input type="text" placeholder="Name" name="name">
+        </p>
+        <br>
+        <br>
+        <p>
+          Email: <input type="text" placeholder="Email" name="email">
+        </p>
+        <br>
+        <br>
+        <p>
+          Phone Number: <input type="text" placeholder="Dont write +91" name="phone">
+        </p>
+        <br>
+        <br>
+        <p>
+          Gender: <input type="radio" name="gender" value="Male">Male
+          <input type="radio" name="gender" value="Female">Female
+        </select>
+        </p>
+        <br>
+        <br>
+        <p>
+          Hobbies: 
+          <input type="checkbox" name="hobbies">hobby 1
+          <input type="checkbox" name="hobbies">hobby 2
+          <input type="checkbox" name="hobbies">hobby 3
+        </p>
+        <br>
+        <br>
+        <button value="submit" onclick="return validate()">submit</button>
+      </form>
+    </div>
+    <script>
+      
+      function validate() {
+        var form = document.forms.RegForm;
+        var name = document.forms.RegForm.name.value;
+        var email = document.forms.RegForm.email.value;
+        var mobile = document.forms.RegForm.phone.value;
+        var gender = document.forms.RegForm.gender.length;
+        var genlen = "";
+        var hobbies = document.forms.RegForm.hobbies.length;
+        var hobbylen = "";
+       
+        var validemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+        var validphone = /^\d{10}$/;
+
+        for (i = 0; i <gender; i++) {
+          if (document.forms.RegForm.gender[i].checked) {
+            genlen = document.forms.RegForm.gender[i].value
+          }
+        }
+
+        for(j = 0; j< hobbies; j++)
+        {
+          if (document.forms.RegForm.hobbies[j].checked) {
+            hobbylen = document.forms.RegForm.hobbies[j].value;
+          }
+        }
+
+
+        if(name === ""){
+          alert("Please Enter your Name");
+          return false;
+        }
+        if(email === ""|| !validemail.test(email)){
+          alert("Please Enter your Email properly");
+          return false;
+        }
+        if(mobile === "" || !validphone.test(mobile)){
+          alert("Please Enter your Mobile Number properly");
+          return false;
+        }
+        if(genlen == ""){
+          alert("Please select your gender");
+          return false;
+        }
+        if (document.forms.RegForm.gender[1].checked){
+          if(hobbylen == ""){
+            
+            alert("Please select atleast one hobby");
+            return false;
+          }
+          
+        }
+
+        showAlert();
+        if (e) return true;
+      }
+
+      function showAlert() {
+          alert ("Form Submitted!");
+        }
+        
+    </script>
+  </body>
+</html> -->
